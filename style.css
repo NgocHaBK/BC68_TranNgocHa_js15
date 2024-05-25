@@ -1,0 +1,31 @@
+.left{
+    width: 15%;
+    /* background-color: #ECF0F3; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
+}
+.right{
+    width: 70%;
+    margin-left: 10%;
+}
+.tablinks{
+    background-color: #ECF0F3;
+    width: 70%;
+}
+.tablinks.active{
+    background-color: aquamarine;
+}
+.tablinks:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.right .money-icon, .fa-coins
+,.fa-calculator
+,.fa-pen-ruler{
+    width: 30px;
+    font-size: 30px;
+}
+.average_number-form,
+.Quydoi-form,
+.dientich_chuvi,
+.tonghaikyso{
+    display: none;
+}

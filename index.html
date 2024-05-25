@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="container m-auto w-75 d-flex mt-5">
+      <div class="left">
+        <div class="tab d-flex flex-column text-center align-items-center m-1">
+          <button
+            class="tablinks btn p-2 px-3 mb-2"
+            onclick="openTab(event, 'quanlts')"
+          >
+            <i class="fa-solid fa-folder folder-icon me-1 text-warning"></i> Bài
+            1
+          </button>
+          <button
+            class="tablinks btn p-2 px-3 mb-2"
+            onclick="openTab(event, 'tienDien')"
+          >
+            <i class="fa-solid fa-folder folder-icon me-1 text-warning"></i> Bài
+            2
+          </button>
+          <button
+            class="tablinks btn p-2 px-3 mb-2"
+            onclick="openTab(event, 'thuecanhan')"
+          >
+            <i class="fa-solid fa-folder folder-icon me-1 text-warning"></i> Bài
+            3
+          </button>
+          
+          <button
+            class="tablinks btn p-2 px-3 mb-2"
+            onclick="openTab(event, 'tienCap')"
+          >
+            <i class="fa-solid fa-folder folder-icon me-1 text-warning"></i> Bài
+            4
+          </button>
+        </div>
+      </div>
+      <div class="right">
+        <div id="quanlts" class="tienLuong-form tabcontent">
+          <i class="fa-solid fa-sack-dollar money-icon text-warning"></i>
+          <h2 class="d-inline-block">Quản lý tuyển sinh:</h2>
+          <div class="input row">
+            <input
+              type="number"
+              class="form-control mb-3 px-3 col-12 col-lg-6"
+              style="width: 40%"
+              id="diemChuan"
+              placeholder="Nhập điểm chuẩn: "
+            />
+            <input
+              type="number"
+              class="form-control mb-2 col-lg-6 col-12 w-50 ms-3"
+              id="diem_1"
+              placeholder="Điểm số môn thứ nhất: "
+            />
+            <input
+              type="number"
+              class="form-control mb-2 px-3 col-12 col-lg-6"
+              style="width: 40%"
+              id="diem_2"
+              placeholder="Điểm số môn thứ hai: "
+            />
+            <input
+              type="number"
+              class="form-control mb-2 col-lg-6 col-12 w-50 ms-3"
+              id="diem_3"
+              placeholder="Điểm số môn thứ ba: "
+            />
+            <div style="width: 40%" class="px-0">
+              <label for="">Khu vực: </label>
+              <select
+                class="form-select mb-2 col-12 col-lg-6"
+                aria-label="Default select example"
+                id="khuVuc"
+              >
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="X">X (không ưu tiên)</option>
+              </select>
+            </div>
+            <div style="width: 40%" class="ps-3">
+              <label for="" class="w-50">Đối tượng: </label>
+              <select
+                class="form-select mb-2 px-3 col-12 col-lg-6"
+                aria-label="Default select example"
+                id="doiTuong"
+              >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="0">0 (không ưu tiên)</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn p-2 text-bg-primary px-3 m-0 mb-2" id="btn-qlts">
+            Kết quả
+          </button>
+          <p id="result" class="p-3 text-bg-success text-white"></p>
+        </div>
+        <div class="average_number-form tabcontent" id="thuecanhan">
+          <i class="fa-solid fa-calculator text-warning"></i>
+          <h2 class="d-inline-block">Tính thuế thu nhập cá nhân:</h2>
+          <div class="input row">
+            <input
+              type="text"
+              class="form-control mb-3 w-25 me-2"
+              id="hoTen"
+              placeholder="Nhập họ và tên: "
+            />
+            <input
+              type="number"
+              class="form-control mb-3 w-25 me-2"
+              id="thuNhap"
+              placeholder="Nhập tổng thu nhập : "
+            />
+            <input
+              type="number"
+              class="form-control mb-3 me-2 w-50"
+              id="soNguoiPhuThuoc"
+              placeholder="Nhập số người phụ thuộc: "
+            />
+          </div>
+          <button
+            class="btn p-2 text-bg-primary px-3 m-0 mb-2"
+            id="btn-tinhThue"
+          >
+            Thuế thu nhập cá nhân
+          </button>
+          <p class="p-3 text-bg-success text-white" id="xuatThue"></p>
+        </div>
+        <div class="dientich_chuvi tabcontent" id="tienDien">
+          <i class="fa-solid fa-pen-ruler text-warning"></i>
+          <h2 class="d-inline-block">Tính tiền điện:</h2>
+          <div class="input row">
+            <input
+              type="text"
+              class="form-control mb-3"
+              style="width: 30%"
+              id="Ten"
+              placeholder="Nhập tên chủ hộ:"
+            />
+            <input
+              type="number"
+              class="form-control mb-3 mx-2"
+              style="width: 30%"
+              id="soKw"
+              placeholder="Nhập số kw:"
+            />
+          </div>
+          <button
+            class="btn p-2 text-bg-primary px-3 m-0 mb-2"
+            id="btn-tienDien"
+          >
+            Tính tiền
+          </button>
+          <p class="xuatketqua bg-success p-2 text-white"></p>
+        </div>
+        <div class="tonghaikyso tabcontent" id="tienCap">
+          <div class="sumof2digits">
+            <i class="fa-solid fa-calculator text-warning"></i>
+            <h2 class="d-inline-block">Tính tiền cáp:</h2>
+            <div class="input">
+              <div class="d-flex justify-content-between">
+                <input
+                  type="number"
+                  class="form-control mb-2 "
+                  placeholder="Nhập mã khách hàng:"
+                  id="maKhachHang"
+                  style="width:45%"
+                />
+                <select
+                  class="form-select mb-2 px-3 col-12 col-lg-6 w-50"
+                  aria-label="Default select example"
+                  id="loaiKhachHang"
+                  onchange="handlechange(event)"
+                >
+                  <option>Loại khách hàng</option>
+                  <option value="nhadan">Nhà dân</option>
+                  <option value="doanhnghiep">Doanh nghiệp</option>
+                </select>
+              </div>
+              <div class="d-flex justify-content-between">
+              <input
+                type="number"
+                class="form-control mb-2"
+                placeholder="Nhập số kênh cao cấp:"
+                id="Kenh"
+                style="width: 45%"
+              />
+              <input
+                type="number"
+                class="form-control mb-2 w-50"
+                placeholder="Nhập số kết nối:"
+                id="ketNoi"
+              />
+              </div>
+
+              <button
+                class="btn p-2 text-bg-primary px-3 m-0 mb-2"
+                id="btn-tienCap"
+              >
+                Tính tiền
+              </button>
+              <p
+                class="xuatTong bg-success p-3 text-white"
+                id="noiXuatTong"
+              ></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>
